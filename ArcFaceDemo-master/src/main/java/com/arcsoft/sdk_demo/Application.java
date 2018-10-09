@@ -7,6 +7,8 @@ import android.media.ExifInterface;
 import android.net.Uri;
 import android.util.Log;
 
+import com.raizlabs.android.dbflow.config.FlowManager;
+
 /**
  * Created by gqj3375 on 2017/4/28.
  */
@@ -21,6 +23,7 @@ public class Application extends android.app.Application {
 		super.onCreate();
 		mFaceDB = new FaceDB(this.getExternalCacheDir().getPath());
 		mImage = null;
+		FlowManager.init(this);
 	}
 
 	public void setCaptureImage(Uri uri) {

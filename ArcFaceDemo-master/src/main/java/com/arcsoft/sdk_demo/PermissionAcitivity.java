@@ -77,7 +77,7 @@ public class PermissionAcitivity extends Activity {
 
 	public void startActiviy() {
 		if (mRequestPermission.isEmpty()) {
-			final ProgressDialog mProgressDialog = new ProgressDialog(this);
+			/*final ProgressDialog mProgressDialog = new ProgressDialog(this);
 			mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 			mProgressDialog.setTitle("loading register data...");
 			mProgressDialog.setCancelable(false);
@@ -96,7 +96,9 @@ public class PermissionAcitivity extends Activity {
 						}
 					});
 				}
-			}).start();
+			}).start();*/
+			Intent intent = new Intent(PermissionAcitivity.this, TestActivity.class);
+			startActivity(intent);
 		} else {
 			Toast.makeText(this, "PERMISSION DENIED!", Toast.LENGTH_LONG).show();
 			new Handler().postDelayed(new Runnable() {

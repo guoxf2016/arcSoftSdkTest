@@ -1,17 +1,17 @@
 apply plugin: 'com.android.application'
-
+def dbflow_version = "4.2.4"
 android {
-    compileSdkVersion 24
+    compileSdkVersion 25
     buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.arcsoft.sdk_demo"
         minSdkVersion 21
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 1
         versionName "1.1"
-        sourceSets.main {
+       /* sourceSets.main {
             jniLibs.srcDirs = ['libs']
-        }
+        }*/
     }
     buildTypes {
         release {
@@ -29,4 +29,16 @@ dependencies {
     implementation files('libs/ageestimation.jar')
     implementation files('libs/genderestimation.jar')
     implementation 'com.guo.android_extend:android-extend:1.0.5'
+    implementation 'com.nononsenseapps:filepicker:4.1.0'
+    implementation "io.reactivex.rxjava2:rxjava:2.2.2"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+
+    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
+
+    implementation "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
+    implementation "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
+
+    implementation "com.github.Raizlabs.DBFlow:dbflow-rx2:${dbflow_version}"
+
+    implementation 'com.liyu.tools:sqlitetoexcel:1.0.7'
 }
